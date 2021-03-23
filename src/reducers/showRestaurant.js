@@ -19,7 +19,6 @@ const initialState = {
 const showRestaurantReducer = (state = initialState, action) => {
   switch (action.type) {
     case SHOW_RESTAURANT:
-      console.log('LO QUE YEGA PAYLOAD', action.payload);
       return action.payload;
     default:
       return state;

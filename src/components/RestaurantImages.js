@@ -48,7 +48,7 @@ const RestaurantImages = ({ items }) => {
 )};
 
 RestaurantImages.propTypes = {
-  images: PropTypes.arrayOf(PropTypes.shape({
+  items: PropTypes.arrayOf(PropTypes.shape({
     image: PropTypes.string,
   })).isRequired,
 };

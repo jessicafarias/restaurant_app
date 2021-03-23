@@ -1,18 +1,16 @@
 import baseUrl from './requesturl';
 
-const getOpinion = async (data) => {
+const PostOpinion = async data => {
   const url = `${baseUrl}/opinions`;
-
   const response = await fetch(url, {
     method: 'POST',
     mode: 'cors',
+    headers: { 'Content-Type': 'application/json' },
     redirect: 'follow',
-    headers: {
-      'Content-Type': 'application/json',
-    },
     body: JSON.stringify(data),
   });
+
   return response.json();
 };
 
-export default getOpinion;
+export default PostOpinion;

@@ -11,7 +11,6 @@ import { showRestaurantAction } from '../actions';
 
 const Show = ({RestaurantView, get}) => {
   const { restaurant } = useParams();
-  console.log('ANTES DE EFET',RestaurantView);
 
   useEffect(() => {
     getRestaurant(1).then(res => {
@@ -28,7 +27,7 @@ const Show = ({RestaurantView, get}) => {
       <h2 className="text-center">Opinions</h2>
       <UserOpinion opinions= {RestaurantView.opinions}/>
       <h2 className="text-center">New opinion</h2>
-      <FormOpinion />
+      <FormOpinion restaurantId = {RestaurantView.restaurant.id}/>
     </div>
   )
 }
