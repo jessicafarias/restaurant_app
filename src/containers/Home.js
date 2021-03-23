@@ -1,11 +1,18 @@
 import Preview from "../components/Preview";
 import '../styles/home.css';
+import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 import fetchRestaurantsAction from '../actions/index';
 import { connect } from 'react-redux';
+import getRestaurantsList from "../request.js/getRestaurantsList";
 
-const Home = ({RestaurantList}) => {
+const Home = ({RestaurantList, fetch}) => {
 
+  useEffect(() => {
+    getRestaurantsList().then(res => {
+      fetch(res);
+    });
+  }, []);
 
   return (
     <div>
@@ -14,8 +21,8 @@ const Home = ({RestaurantList}) => {
         {RestaurantList.map(obj => (
             <div className="col-3">
               <Preview 
-                key={obj.name}
-                name={obj.name}
+                key={obj.id}
+                restaurant={obj}
               />
           </div>
         ))}
@@ -27,7 +34,8 @@ const Home = ({RestaurantList}) => {
 Home.propTypes = {
   RestaurantList: PropTypes.arrayOf(PropTypes.shape({
     id: PropTypes.number,
-    name: PropTypes.string,
+    title: PropTypes.string,
+    cover: PropTypes.string,
     description: PropTypes.string,
   })).isRequired,
 };

@@ -1,6 +1,6 @@
 import baseUrl from './requesturl';
 
-const getRestaurants = async (name = '') => {
+const getRestaurantsList = async (name = '') => {
   const url = `${baseUrl}/restaurants/${name}`;
 
   const response = await fetch(url, {
@@ -11,4 +11,4 @@ const getRestaurants = async (name = '') => {
   return response.json();
 };
 
-export default getRestaurants;
+export default getRestaurantsList;
