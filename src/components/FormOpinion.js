@@ -22,8 +22,12 @@ const FormOpinion = ({ restaurantId, post }) => {
   const handleSubmit = event => {
     event.preventDefault();
     PostOpinion(data).then(res => {
-      console.log(res);
       post(res);
+    });
+    setData({
+      name: '',
+      body: '',
+      restaurant_id: data.restaurant_id,
     });
   };
 
@@ -54,6 +58,7 @@ const FormOpinion = ({ restaurantId, post }) => {
           id="name"
           name="name"
           onChange={handleState}
+          value={data.name}
         />
       </Form.Group>
       <Form.Field
@@ -63,6 +68,7 @@ const FormOpinion = ({ restaurantId, post }) => {
         name="body"
         placeholder="Tell us more about this restaurant..."
         onChange={handleState}
+        value={data.body}
       />
       <Form.Field control={Button} onClick={handleSubmit} type="button">Submit</Form.Field>
     </Form>

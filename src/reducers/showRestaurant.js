@@ -19,9 +19,7 @@ const initialState = {
 
 const addOpinion = (state, newOpinion) => {
   const newState = state;
-  console.log('NEWSTATEOPs', newState.opinions);
-  newState.opinions = [...state.opinions, newOpinion];
-  console.log('AFERSADD', newState.opinions);
+  newState.opinions = [...state.opinions, newOpinion].sort((a, b) => (a.id - b.id));
   return newState;
 };
 const showRestaurantReducer = (state = initialState, action) => {
