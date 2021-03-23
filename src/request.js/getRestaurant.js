@@ -1,4 +1,5 @@
 import baseUrl from './requesturl';
+
 const getRestaurant = async (name = '') => {
   const url = `${baseUrl}/restaurants/${name}`;
 

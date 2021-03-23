@@ -1,13 +1,12 @@
-import Preview from "../components/Preview";
 import '../styles/home.css';
 import { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import fetchRestaurantsAction from '../actions/index';
 import { connect } from 'react-redux';
-import getRestaurantsList from "../request.js/getRestaurantsList";
+import { fetchRestaurantsAction } from '../actions/index';
+import getRestaurantsList from '../request.js/getRestaurantsList';
+import Preview from '../components/Preview';
 
-const Home = ({RestaurantList, fetch}) => {
-
+const Home = ({ RestaurantList, fetch }) => {
   useEffect(() => {
     getRestaurantsList().then(res => {
       fetch(res);
@@ -19,17 +18,20 @@ const Home = ({RestaurantList, fetch}) => {
       <h1 className="text-center mt-5"> HOME </h1>
       <div className="home_content row">
         {RestaurantList.map(obj => (
-            <div className="col-3">
-              <Preview 
-                key={obj.id}
-                restaurant={obj}
-              />
+          <div
+            className="col-3"
+            key={obj.id}
+          >
+
+            <Preview
+              restaurant={obj}
+            />
           </div>
         ))}
       </div>
     </div>
-  )
-}
+  );
+};
 
 Home.propTypes = {
   RestaurantList: PropTypes.arrayOf(PropTypes.shape({
@@ -49,5 +51,9 @@ const mapDispatchToProps = dispatch => ({
     dispatch(fetchRestaurantsAction(restaurants));
   },
 });
+
+Home.propTypes = {
+  fetch: PropTypes.func.isRequired,
+};
 
 export default connect(mapStateToProps, mapDispatchToProps)(Home);

@@ -5,16 +5,14 @@ export const fetchRestaurantsAction = restaurants => ({
   payload: restaurants,
 });
 
-export const updateOpinionsAction = (opinion, restaurant) => ({
+export const postOpinionsAction = opinion => ({
   type: types.ADD_OPINION,
-  name: opinion.body,
-  url: restaurant.id,
+  opinion,
+
 });
 
-export const showRestaurantAction = (restaurant) => ({
+export const showRestaurantAction = restaurant => ({
   type: types.SHOW_RESTAURANT,
   payload: restaurant,
 
 });
-
-export default fetchRestaurantsAction;

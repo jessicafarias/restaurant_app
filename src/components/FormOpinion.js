@@ -1,56 +1,56 @@
-import 'semantic-ui-css/semantic.min.css'
-import React from 'react';
+import 'semantic-ui-css/semantic.min.css';
+import PropTypes from 'prop-types';
+import React, { useState } from 'react';
 import {
   Button,
-  Checkbox,
   Form,
   Input,
   TextArea,
 } from 'semantic-ui-react';
-import { useState } from 'react';
+
+import { connect } from 'react-redux';
 import PostOpinion from '../request.js/PostOpinion';
+import { postOpinionsAction } from '../actions';
 
-
-const FormOpinion = ({restaurantId}) => {
-
+const FormOpinion = ({ restaurantId, post }) => {
   const [data, setData] = useState({
-    name:'',
-    body:'',
+    name: '',
+    body: '',
     restaurant_id: restaurantId,
   });
 
   const handleSubmit = event => {
     event.preventDefault();
-    console.log(data);
-    PostOpinion(data).then(res =>{
+    PostOpinion(data).then(res => {
       console.log(res);
-    })
-  }
+      post(res);
+    });
+  };
 
   const handleState = event => {
     event.preventDefault();
-    if (event.target.id==="name"){
+    if (event.target.id === 'name') {
       setData({
-        name:event.target.value,
-        body:data.body,
+        name: event.target.value,
+        body: data.body,
         restaurant_id: data.restaurant_id,
       });
-    } else if (event.target.id==="body") {
+    } else if (event.target.id === 'body') {
       setData({
-        name:data.name,
-        body:event.target.value,
+        name: data.name,
+        body: event.target.value,
         restaurant_id: data.restaurant_id,
-      });;
+      });
     }
-  }
-  
+  };
+
   return (
     <Form className="w-50 m-auto">
-      <Form.Group widths='equal'>
+      <Form.Group widths="equal">
         <Form.Field
           control={Input}
-          label='Name'
-          placeholder='Name'
+          label="Name"
+          placeholder="Name"
           id="name"
           name="name"
           onChange={handleState}
@@ -58,16 +58,26 @@ const FormOpinion = ({restaurantId}) => {
       </Form.Group>
       <Form.Field
         control={TextArea}
-        label='About'
+        label="About"
         id="body"
         name="body"
-        placeholder='Tell us more about this restaurant...'
+        placeholder="Tell us more about this restaurant..."
         onChange={handleState}
       />
-      <Form.Field control={Button} onClick={handleSubmit}>Submit</Form.Field>
+      <Form.Field control={Button} onClick={handleSubmit} type="button">Submit</Form.Field>
     </Form>
-  )
-  
-}
+  );
+};
 
-export default FormOpinion;
+const mapDispatchToProps = dispatch => ({
+  post: opinion => {
+    dispatch(postOpinionsAction(opinion));
+  },
+});
+
+FormOpinion.propTypes = {
+  restaurantId: PropTypes.number.isRequired,
+  post: PropTypes.func.isRequired,
+};
+
+export default connect(null, mapDispatchToProps)(FormOpinion);
