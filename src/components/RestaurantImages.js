@@ -13,9 +13,8 @@ const RestaurantImages = ({ items }) => {
             <div key={item.id} 
             className="w-100 sizeprogress">
               <div className="d-flex justify-content-center align-items-center w-100">
-                <img className="img_carousel" src={item.img}></img>
+                <img className="img_carousel" src={item.image}></img>
               </div>
-              <p className="text-center font-xs">{item.name}</p>
             </div>
           ))}
         </Carousel>
@@ -26,9 +25,8 @@ const RestaurantImages = ({ items }) => {
             <div key={item.id} 
             className="w-100 sizeprogress">
               <div className="d-flex justify-content-center align-items-center w-100">
-                <img className="img_carousel" src={item.img}></img>
+              <img className="img_carousel" src={item.image}></img>
               </div>
-              <p className="text-center font-xs">{item.name}</p>
             </div>
           ))}
         </Carousel>
@@ -39,9 +37,8 @@ const RestaurantImages = ({ items }) => {
             <div key={item.id} 
             className="w-100 sizeprogress">
               <div className="d-flex justify-content-center align-items-center w-100">
-                <img className="img_carousel" src={item.img}></img>
+              <img className="img_carousel" src={item.image}></img>
               </div>
-              <p className="text-center font-xs">{item.name}</p>
             </div>
           ))}
         </Carousel>
@@ -51,9 +48,8 @@ const RestaurantImages = ({ items }) => {
 )};
 
 RestaurantImages.propTypes = {
-  items: PropTypes.arrayOf(PropTypes.shape({
-    id: PropTypes.number,
-    name: PropTypes.string,
+  images: PropTypes.arrayOf(PropTypes.shape({
+    image: PropTypes.string,
   })).isRequired,
 };
 

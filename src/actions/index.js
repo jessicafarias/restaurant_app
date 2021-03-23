@@ -11,4 +11,10 @@ export const updateOpinionsAction = (opinion, restaurant) => ({
   url: restaurant.id,
 });
 
+export const showRestaurantAction = (restaurant) => ({
+  type: types.SHOW_RESTAURANT,
+  payload: restaurant,
+
+});
+
 export default fetchRestaurantsAction;

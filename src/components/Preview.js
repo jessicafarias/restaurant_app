@@ -9,8 +9,10 @@ const Preview = ({restaurant}) => {
       </img>
       <p>{restaurant.title}</p>
       <p>{restaurant.description}      </p>
-      <button className="btn_view"> VIEW MORE
-      </button>
+      <form action={`/show/${restaurant.title}`}>
+        <input type="submit" className="btn_view" value="VIEW MORE" />
+      </form>
+
     </div>
   )
 }

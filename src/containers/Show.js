@@ -1,29 +1,66 @@
 import { useParams } from 'react-router-dom';
 //import 'semantic-ui-css/semantic.min.css';
+import PropTypes from 'prop-types';
 import UserOpinion from '../components/UserOpinion'
 import FormOpinion from '../components/FormOpinion';
+import { useEffect } from 'react';
 import RestaurantImages from '../components/RestaurantImages';
-const Show = () => {
-  const { restaurant } = useParams();
+import getRestaurant from '../request.js/getRestaurant';
+import { connect } from 'react-redux';
+import { showRestaurantAction } from '../actions';
 
-  const ImagesList =[{id:1, 
-    name:'das',
-    img: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'},
-  {id:2, 
-    name:'das',
-  img:'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'},{id:3, name:'das',
-img: 'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'},{id:4, name:'das', img:'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'},{id:5, name:'das',
-img:'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'},{id:6, name:'das', img:'https://images.pexels.com/photos/1640777/pexels-photo-1640777.jpeg?auto=compress&cs=tinysrgb&dpr=2&h=650&w=940'}]
+const Show = ({RestaurantView, get}) => {
+  const { restaurant } = useParams();
+  console.log('ANTES DE EFET',RestaurantView);
+
+  useEffect(() => {
+    getRestaurant(1).then(res => {
+      get(res);
+    });
+  }, []);
+
   return (
     <div>
+      <h1 className="text-center">{RestaurantView.restaurant.name}</h1>
+      <h2 className="text-center">{RestaurantView.restaurant.description}</h2>
       <h2 className="text-center">Pictures</h2>
-      <RestaurantImages items={ImagesList}/>
+      <RestaurantImages items={RestaurantView.images}/>
       <h2 className="text-center">Opinions</h2>
-      <UserOpinion />
+      <UserOpinion opinions= {RestaurantView.opinions}/>
       <h2 className="text-center">New opinion</h2>
       <FormOpinion />
     </div>
   )
 }
 
-export default Show;
+const mapStateToProps = state => ({
+  RestaurantView: state.restaurant,
+});
+
+const mapDispatchToProps = dispatch => ({
+  get: restaurant => {
+    dispatch(showRestaurantAction(restaurant));
+  },
+});
+
+Show.propTypes = {
+  RestaurantView:(
+    PropTypes.shape({
+    id: PropTypes.number,
+    title: PropTypes.string,
+    cover: PropTypes.string,
+    description: PropTypes.string,
+  }), 
+  PropTypes.arrayOf(PropTypes.shape({
+    id: PropTypes.number,
+    name: PropTypes.string,
+    body: PropTypes.string,
+    created_at: PropTypes.string,
+  })), 
+  PropTypes.arrayOf({
+    image: PropTypes.string,
+  })).isRequired,
+  get: PropTypes.func.isRequired,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Show);
