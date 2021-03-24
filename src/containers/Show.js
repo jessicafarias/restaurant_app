@@ -1,7 +1,7 @@
-// import { useParams } from 'react-router-dom';
+import { useParams } from 'react-router-dom';
 // import 'semantic-ui-css/semantic.min.css';
 import PropTypes from 'prop-types';
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { connect } from 'react-redux';
 import UserOpinion from '../components/UserOpinion';
 import FormOpinion from '../components/FormOpinion';
@@ -10,12 +10,19 @@ import getRestaurant from '../request.js/getRestaurant';
 import { showRestaurantAction } from '../actions';
 
 const Show = ({ RestaurantView, get }) => {
-  // const { restaurant } = useParams();
+  const { restaurant } = useParams();
+  const [count, setCount] = useState(0);
+  console.log(restaurant);
+
+  const handleOpinions = () => {
+    setCount(count + 1);
+  };
   useEffect(() => {
-    getRestaurant(1).then(res => {
+    getRestaurant(restaurant).then(res => {
       get(res);
+      setCount(res.opinions.length);
     });
-  }, [RestaurantView]);
+  }, [count]);
 
   return (
     <div>
@@ -26,7 +33,7 @@ const Show = ({ RestaurantView, get }) => {
       <h2 className="text-center">Opinions</h2>
       <UserOpinion opinions={RestaurantView.opinions} />
       <h2 className="text-center">New opinion</h2>
-      <FormOpinion restaurantId={RestaurantView.restaurant.id} />
+      <FormOpinion restaurantId={RestaurantView.restaurant.id} handleClick={handleOpinions} />
     </div>
   );
 };

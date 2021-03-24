@@ -9,7 +9,7 @@ const Preview = ({ restaurant }) => (
       {restaurant.description}
       {' '}
     </p>
-    <form action={`/show/${restaurant.title}`}>
+    <form action={`/show/${restaurant.id}`}>
       <input type="submit" className="btn_view" value="VIEW MORE" />
     </form>
 

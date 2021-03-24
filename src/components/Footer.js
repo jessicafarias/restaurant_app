@@ -4,7 +4,7 @@ const Footer = () => (
   <footer>
     <div className="footer">
       <h3 className="text-center p-3">RESTAURANT PAGE</h3>
-      <div className="d-flex align-items-center justify-content-between w-50 m-auto">
+      <div className="d-flex align-items-center justify-content-between w-50 m-auto flex-wrap">
         <p>About</p>
         <p>Contact</p>
         <p>Terms of Service</p>

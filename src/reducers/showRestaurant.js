@@ -3,15 +3,10 @@ import { SHOW_RESTAURANT, ADD_OPINION } from '../actions/types';
 const initialState = {
   restaurant: {
     id: 1,
-    name: 'RNAME',
-    description: 'Descriptionres',
+    name: 'LOADING...',
+    description: '',
   },
-  opinions: [{
-    id: 1,
-    name: 'Jess',
-    body: 'commentario',
-    created_at: 'Hoy',
-  }],
+  opinions: [],
   images: [{
     image: 'http://localhost:3002/rails/active_storage/blobs/eyJfcmFpbHMiOnsibWVzc2FnZSI6IkJBaHBCZz09IiwiZXhwIjpudWxsLCJwdXIiOiJibG9iX2lkIn19--2f992e7e175aff0ecee437941c438352e3afffca/smoothie.jpg',
   }],

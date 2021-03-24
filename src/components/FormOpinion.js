@@ -12,7 +12,7 @@ import { connect } from 'react-redux';
 import PostOpinion from '../request.js/PostOpinion';
 import { postOpinionsAction } from '../actions';
 
-const FormOpinion = ({ restaurantId, post }) => {
+const FormOpinion = ({ restaurantId, post, handleClick }) => {
   const [data, setData] = useState({
     name: '',
     body: '',
@@ -29,6 +29,7 @@ const FormOpinion = ({ restaurantId, post }) => {
       body: '',
       restaurant_id: data.restaurant_id,
     });
+    handleClick();
   };
 
   const handleState = event => {
@@ -84,6 +85,7 @@ const mapDispatchToProps = dispatch => ({
 FormOpinion.propTypes = {
   restaurantId: PropTypes.number.isRequired,
   post: PropTypes.func.isRequired,
+  handleClick: PropTypes.func.isRequired,
 };
 
 export default connect(null, mapDispatchToProps)(FormOpinion);
