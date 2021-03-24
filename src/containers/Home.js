@@ -19,10 +19,9 @@ const Home = ({ RestaurantList, fetch }) => {
       <div className="home_content row">
         {RestaurantList.map(obj => (
           <div
-            className="col-3"
+            className="col-lg-3 col-md-4 col-sm-12 mt-3"
             key={obj.id}
           >
-
             <Preview
               restaurant={obj}
             />

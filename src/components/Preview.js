@@ -3,7 +3,7 @@ import PropTypes from 'prop-types';
 
 const Preview = ({ restaurant }) => (
   <div>
-    <img src={restaurant.cover} className="w-100 preview_img" alt="port" />
+    <img src={restaurant.cover} className="w-100 preview_img " alt="port" />
     <p>{restaurant.title}</p>
     <p>
       {restaurant.description}

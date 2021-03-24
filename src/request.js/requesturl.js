@@ -1,2 +1,2 @@
-const baseUrl = 'http://localhost:3002';
+const baseUrl = 'https://restaurant-api3.herokuapp.com';
 export default baseUrl;
