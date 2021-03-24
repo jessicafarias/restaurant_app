@@ -1,6 +1,5 @@
-# Tracking app
-Tracking your time
-
+# Restaurant app
+informational website about restaurants
 
 [![Contributors][contributors-shield]][contributors-url]
 [![Forks][forks-shield]][forks-url]
@@ -8,7 +7,7 @@ Tracking your time
 [![Issues][issues-shield]][issues-url]
 
 <!-- PROJECT LOGO -->
-  <h3 align="center">Track</h3>
+  <h3 align="center">Restaurant blog</h3>
 
   <p align="center">
     This is a simple landing page. The user will be able to see the information of the chosen restaurant and make comments on them.<br /></p>
@@ -22,18 +21,20 @@ Tracking your time
 <!-- ABOUT THE PROJECT -->
 
 ## Live Demo
-### It's deployed [here](https://focused-ramanujan-35f272.netlify.app/) on netlify
+### Life demo it's deployed [here](https://focused-ramanujan-35f272.netlify.app/) on netlify
 
 
 ### Built With
 This project was built using these technologies.
 * React
+* HTML & CSS
 * JavaScript
 * GitHub
 * Redux
 * Eslint
 * Stylelint
 * VScode
+* Netlify
 
 ### Getting Started
 
