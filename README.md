@@ -19,6 +19,7 @@ informational website about restaurants
 
 
 <!-- ABOUT THE PROJECT -->
+##### This is a front-end application, which retrieves data from [this API](https://github.com/jessicafarias/restaurant_api/tree/feature/restaurant) that I developed simultaniaslly for this project.
 
 ## Live Demo
 ### Life demo it's deployed [here](https://focused-ramanujan-35f272.netlify.app/) on netlify
@@ -78,7 +79,6 @@ Start the local webserver:
 ## Authors
 
 ## 👤 Jessica Michelle Farías Rosado:
-Working as a FullStack developer on this project and UI designer.
 
  [![Website](https://img.shields.io/badge/-Website-black?style=for-the-badge&logo=Julia&logoColor=white)](https://jessicafarias.github.io/)
 
