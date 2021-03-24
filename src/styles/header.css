@@ -1,19 +1,19 @@
 @import url('https://fonts.googleapis.com/css2?family=Hammersmith+One&display=swap');
 
 .header {
-  max-height:60vh;
+  max-height: 60vh;
   min-height: 50vh;
   overflow: hidden;
   position: relative;
   z-index: -1;
 }
 
-.header> img {
-  width: 100%;
-  object-fit: contain;
+.header > img {
+  max-height: 60vh;
+  min-height: 50vh;
+  object-fit: cover;
   object-position: center center;
 }
-
 
 .header_text {
   font-family: 'Hammersmith One', sans-serif;
@@ -29,13 +29,13 @@
 
 .darker {
   position: absolute;
-  top:0;
+  top: 0;
   right: 0;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.233);
 }
 
-.subtitle{
+.subtitle {
   font-size: 20px;
 }

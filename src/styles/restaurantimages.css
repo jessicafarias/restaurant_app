@@ -1,11 +1,15 @@
+.iLquPE:disabled {
+  color: rgb(211, 211, 211);
+}
+
 .carousel_container {
   max-width: 800px;
   width: 90%;
   margin: auto;
 }
+
 .rec-carousel-wrapper {
   padding-top: 10px;
-  margin-top: 15px;
   max-width: 800px;
   margin: auto;
 }
@@ -15,6 +19,7 @@
   background: none;
   box-shadow: none;
 }
+
 .rec-carousel-wrapper > .galrjd {
   overflow-x: hidden;
 }
@@ -54,10 +59,6 @@ button.rec-dot:focus {
   margin: 5px 0 !important;
 }
 
-.iLquPE:disabled {
-  color: rgb(211, 211, 211);
-}
-
 .lgksPe:hover:enabled,
 .lgksPe:focus:enabled {
   background: none !important;
@@ -70,7 +71,7 @@ button.rec-dot:focus {
   box-shadow: inset 0 0 1px 1px lightgrey;
 }
 
-.img_carousel{
+.img_carousel {
   object-fit: cover;
   width: 100%;
   height: 200px;

@@ -23,7 +23,7 @@ const Show = ({ RestaurantView, get }) => {
   }, [count]);
 
   return (
-    <div>
+    <div className="w-100">
       <h1 className="text-center">{RestaurantView.restaurant.name}</h1>
       <h2 className="text-center">{RestaurantView.restaurant.description}</h2>
       <h2 className="text-center">Pictures</h2>
