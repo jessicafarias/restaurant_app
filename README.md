@@ -11,26 +11,19 @@ Tracking your time
   <h3 align="center">Track</h3>
 
   <p align="center">
-    This project is created with the porpuse of register and tracking the time invested on diferent tasks. The UI has diferent interactive elements like a toogle, a funcional carousel to see the task. Also the login/logout is implemented using tokens so fell free to use any password it will be encripted.<br /></p>
-    <h2 align="center">SCREENSHOTS</h2>
+    This is a simple landing page. The user will be able to see the information of the chosen restaurant and make comments on them.<br /></p>
+    <h2 align="center">SCREENSHOT</h2>
 
   <p align="center">
-      <img alt="Light" src="./public/list.png" width="30%">
-  &nbsp; &nbsp; &nbsp; &nbsp;
-    <img alt="Dark" src="./public/details.png" width="30%">
-  </p>
-
-  <p align="center">
-    <img alt="Dark" src="./public/signup.png" width="30%">
-  &nbsp; &nbsp; &nbsp; &nbsp;
-      <img alt="Light" src="./public/create.png" width="30%">
+      <img alt="Light" src="./public/screenshot.png" width="100%">
   </p>
 
 
 <!-- ABOUT THE PROJECT -->
 
 ## Live Demo
-It's deployed [here](https://vigorous-minsky-e3bf16.netlify.app/) on netlify
+### It's deployed [here](https://focused-ramanujan-35f272.netlify.app/) on netlify
+
 
 ### Built With
 This project was built using these technologies.
@@ -41,8 +34,6 @@ This project was built using these technologies.
 * Eslint
 * Stylelint
 * VScode
-* Jest
-
 
 ### Getting Started
 
@@ -86,7 +77,7 @@ Start the local webserver:
 ## Authors
 
 ## 👤 Jessica Michelle Farías Rosado:
-Working as a FullStack developer on this project.
+Working as a FullStack developer on this project and UI designer.
 
  [![Website](https://img.shields.io/badge/-Website-black?style=for-the-badge&logo=Julia&logoColor=white)](https://jessicafarias.github.io/)
 
@@ -96,12 +87,6 @@ Working as a FullStack developer on this project.
  
  [![TWITTER](https://img.shields.io/badge/-TWITTER-1DA1F2?style=for-the-badge&logo=Twitter&logoColor=white)](https://twitter.com/FariasRosado)
 
-
-## 👤 Gregoire Vella
-A special thanks is expressed to Marc Roy for the design.
-This is design will not use as a comercial purpose
-- [Work](https://www.behance.net/gallery/13271423/Bodytrackit-An-iOs-app-Branding-UX-and-UI)
-- [Grego](https://www.behance.net/gregoirevella)
 
 
 ## 🤝 Contributing
