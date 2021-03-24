@@ -31,7 +31,7 @@ const Show = ({ RestaurantView, get }) => {
       <h2 className="text-center">Opinions</h2>
       <UserOpinion opinions={RestaurantView.opinions} />
       <h2 className="text-center">New opinion</h2>
-      <FormOpinion restaurantId={RestaurantView.restaurant.id} handleClick={handleOpinions} />
+      <FormOpinion restaurantId={restaurant} handleClick={handleOpinions} />
     </div>
   );
 };
