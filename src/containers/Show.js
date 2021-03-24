@@ -12,8 +12,6 @@ import { showRestaurantAction } from '../actions';
 const Show = ({ RestaurantView, get }) => {
   const { restaurant } = useParams();
   const [count, setCount] = useState(0);
-  console.log(restaurant);
-
   const handleOpinions = () => {
     setCount(count + 1);
   };
