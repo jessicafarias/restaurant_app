@@ -1,0 +1,3 @@
+export const GET_RESTAURANTS = 'GET_RESTAURANTS';
+export const ADD_OPINION = 'ADD_OPINION';
+export const SHOW_RESTAURANT = 'SHOW_RESTAURANT';
