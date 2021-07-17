@@ -1,0 +1,19 @@
+.btn_view {
+  background-color: black;
+  border: 3px solid #000;
+  color: white;
+  width: 100%;
+}
+
+.btn_view:hover {
+  background-color: rgb(0, 0, 0);
+  opacity: 80%;
+}
+
+.preview_img {
+  border-radius: 7px;
+  min-height: 200px;
+  height: 25vh;
+  object-fit: cover;
+  object-position: center center;
+}
